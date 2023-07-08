@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Manchester/static/css/main.e514c4a8.css",
+    "main.js": "/Manchester/static/js/main.ace6fbcd.js",
+    "static/js/787.c144c031.chunk.js": "/Manchester/static/js/787.c144c031.chunk.js",
+    "static/media/Combo.png": "/Manchester/static/media/Combo.147fe341f6f357966473.png",
+    "static/media/Drumstick.png": "/Manchester/static/media/Drumstick.6a560572ec70bd89ddd7.png",
+    "static/media/Wings.png": "/Manchester/static/media/Wings.f0d9df26bb385a1c203e.png",
+    "static/media/Strips.png": "/Manchester/static/media/Strips.018f1eafb74828b53f12.png",
+    "static/media/1.jpeg": "/Manchester/static/media/1.0546504b2742b14050c0.jpeg",
+    "static/media/dip.png": "/Manchester/static/media/dip.04d8ce7d9ecd837627c6.png",
+    "static/media/check.gif": "/Manchester/static/media/check.65d99e0dfaf6cf075a39.gif",
+    "static/media/Logo.png": "/Manchester/static/media/Logo.8ee94bf13902b86101ae.png",
+    "static/media/Map.png": "/Manchester/static/media/Map.ec5170d68ada4368d094.png",
+    "index.html": "/Manchester/index.html",
+    "main.e514c4a8.css.map": "/Manchester/static/css/main.e514c4a8.css.map",
+    "main.ace6fbcd.js.map": "/Manchester/static/js/main.ace6fbcd.js.map",
+    "787.c144c031.chunk.js.map": "/Manchester/static/js/787.c144c031.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e514c4a8.css",
+    "static/js/main.ace6fbcd.js"
+  ]
+}
