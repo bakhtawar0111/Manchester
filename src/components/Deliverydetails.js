@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Thankyou from "./Thankyou";
 
 export default function Deliverydetails(props) {
+  const [invalid, setInvalid] = useState();
   const [thank, setthank] = useState();
   const handleThank = () => {
     setthank(true);
@@ -12,20 +13,42 @@ export default function Deliverydetails(props) {
   const [Name, setName] = useState("");
   let handleNameOnchange = (event) => {
     setName(event.target.value);
+    document.getElementById("Name").style.borderColor = "white";
   };
   const [Mobile, setMobile] = useState("");
   let handleMobileOnchange = (event) => {
     setMobile(event.target.value);
+    document.getElementById("Mobile").style.borderColor = "white";
   };
   const [Email, setEmail] = useState("");
   let handleEmailOnchange = (event) => {
     setEmail(event.target.value);
+    document.getElementById("Email").style.borderColor = "white";
+    setInvalid("");
   };
   const [Address, setAddress] = useState("");
   let handleAddressOnchange = (event) => {
     setAddress(event.target.value);
+    document.getElementById("Address").style.borderColor = "white";
   };
-
+  const checkEmail = () => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(Email)) {
+      document.getElementById("Email").style.borderColor = "red";
+      setInvalid(true);
+    } else {
+      handleThank();
+    }
+  };
+  const checkValidation = () => {
+    if (Name.length == 0) {
+      document.getElementById("Name").style.borderColor = "red";
+    } else if (Mobile.length < 10) {
+      document.getElementById("Mobile").style.borderColor = "red";
+    } else {
+      checkEmail();
+    }
+  };
   return (
     <div className="container-fluid Delivery border border-5 border-danger">
       <div
@@ -42,7 +65,7 @@ export default function Deliverydetails(props) {
               <input
                 className="form-control"
                 id="Name"
-                placeholder="Name"
+                placeholder="Name *"
                 onChange={handleNameOnchange}
                 value={Name}
               />
@@ -54,7 +77,7 @@ export default function Deliverydetails(props) {
                 type="Number"
                 className="form-control"
                 id="Mobile"
-                placeholder="Mobile No."
+                placeholder="Mobile No.*"
                 onChange={handleMobileOnchange}
                 value={Mobile}
               />
@@ -64,10 +87,17 @@ export default function Deliverydetails(props) {
               <input
                 className="form-control"
                 id="Email"
-                placeholder="Email"
+                placeholder="Email *"
                 onChange={handleEmailOnchange}
                 value={Email}
               />
+              {invalid && (
+                <p
+                  style={{ fontSize: "14px", textAlign: "right", color: "red" }}
+                >
+                  *Invalid Email
+                </p>
+              )}
             </div>
           </div>
           <div className="row">
@@ -76,7 +106,7 @@ export default function Deliverydetails(props) {
                 className="form-control"
                 id="Address"
                 rows="3"
-                placeholder="Address"
+                placeholder="Address *"
                 onChange={handleAddressOnchange}
                 value={Address}
               ></textarea>
@@ -89,11 +119,14 @@ export default function Deliverydetails(props) {
             </div>
           </div>
         </div>
+        <p style={{ fontSize: "14px", textAlign: "right", color: "white" }}>
+          All fields (*) are Mandatory
+        </p>
         <button
           //disabled={Mobile.length<10||Name.length===0||Address.length===0||Email.length===0}
           className="btn btn my-3 text-light fs-5"
           style={{ backgroundColor: "rgba(94,168,0)" }}
-          onClick={handleThank}
+          onClick={checkValidation}
         >
           Confirm Order
         </button>
