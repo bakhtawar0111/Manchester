@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+::-webkit-scrollbar{
+    background-color: transparent;
+    width: 0px;
+}
+.nav-link{
+    color: white;
+}
+.nav-link:hover{
+    color: white;
+    font-weight:bold;
+}
+.introcontainer{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 430px;
+}
+.introcaption{
+    font-size: 50px;
+    font-family: "Caveat";
+    font-weight: bolder;
+}
+.sliderimg{
+    width: 98%;
+    height: 420px;
+}
+.caption>p{
+    font-family: "Dancing Script";
+    font-weight: bolder;
+}
+.card{
+    width: 18rem;
+    }
+.card>img{
+    width: 100%;
+    height: auto;
+}
+.innercart{
+    width: 50%;
+    background-color: rgba(236,50,55,255);
+}
+.thank{
+    background-color: aliceblue;
+    border-radius: 5px;
+}
+.footer{
+    display:flex;
+    justify-content:space-evenly;
+    padding: 0px;
+}
+.footer-img{
+    margin-left: 100px;
+    width:auto;
+    height:200px
+}
+.footer-map{
+    margin-top: 25px;
+    margin-left: 60px;
+    width:60%;
+    height:80%
+}
+@media screen and (max-width:768px) {
+    .card{
+        width: auto;
+         height:auto ;
+         display: flex;
+        }
+    .card>img{
+        width: 50%;
+        height: auto;
+    } 
+    .card-body{
+        margin-top: 0%;
+        padding: 0%;
+        width: 50%;
+        position: absolute;
+        right: 0px;
+        font-size:medium;
+    }
+    .card-text{
+        font-size: 80%;
+    } 
+    .card-title{
+        font-size:large;
+    }
+    .introcontainer{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 190px;
+    }
+    .introcaption{
+        font-size: 18px;
+        font-family: "Caveat";
+        font-weight: bold;
+    }
+    .innercart{
+        width: auto;
+    }
+    .footer{
+        padding: 0px;
+        margin: 0px;
+        display: block;
+    }
+    .footer-img{
+        margin: 0px;
+        margin-left: 5px;
+        width:90%;
+        height:100px
+    }
+    .footer-map{
+        margin: 20px;
+        margin-left: 0px;
+        width:90%;
+        height:120px
+    }
+    .sliderimg{       
+        width: auto;
+        height: 170px;
+    }
+}
+.Cart{
+    background-color: rgba(100, 96, 96, 0.777);
+    width: 100%;
+    height: 100%;
+    position:fixed;
+    top: 10%;
+}
+.Delivery{
+    background-color: rgba(100, 96, 96, 0.777);
+    width: 100%;
+    height: 100%;
+    position:fixed;
+    top: 10%;
+    left:0%;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/*{`${280*props.drum+220*props.wings+240*props.stripes+540*props.combo3+360*props.combo2+20*props.dip}`}*/
