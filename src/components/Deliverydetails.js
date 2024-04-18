@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import Thankyou from "./Thankyou";
 
 export default function Deliverydetails(props) {
-  const [invalid, setInvalid] = useState();
+  const [invalidEmail, setInvalidEmail] = useState();
+  const [invalidAdd, setInvalidAdd] = useState();
   const [thank, setthank] = useState();
   const handleThank = () => {
     setthank(true);
@@ -24,18 +25,19 @@ export default function Deliverydetails(props) {
   let handleEmailOnchange = (event) => {
     setEmail(event.target.value);
     document.getElementById("Email").style.borderColor = "white";
-    setInvalid("");
+    setInvalidEmail("");
   };
   const [Address, setAddress] = useState("");
   let handleAddressOnchange = (event) => {
     setAddress(event.target.value);
     document.getElementById("Address").style.borderColor = "white";
+    setInvalidAdd();
   };
   const checkEmail = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(Email)) {
       document.getElementById("Email").style.borderColor = "red";
-      setInvalid(true);
+      setInvalidEmail(true);
     } else {
       handleThank();
     }
@@ -45,6 +47,9 @@ export default function Deliverydetails(props) {
       document.getElementById("Name").style.borderColor = "red";
     } else if (Mobile.length < 10) {
       document.getElementById("Mobile").style.borderColor = "red";
+    } else if (Address.length < 10) {
+      document.getElementById("Address").style.borderColor = "red";
+      setInvalidAdd(true);
     } else {
       checkEmail();
     }
@@ -91,7 +96,7 @@ export default function Deliverydetails(props) {
                 onChange={handleEmailOnchange}
                 value={Email}
               />
-              {invalid && (
+              {invalidEmail && (
                 <p
                   style={{ fontSize: "14px", textAlign: "right", color: "red" }}
                 >
@@ -110,6 +115,13 @@ export default function Deliverydetails(props) {
                 onChange={handleAddressOnchange}
                 value={Address}
               ></textarea>
+              {invalidAdd && (
+                <p
+                  style={{ fontSize: "14px", textAlign: "right", color: "red" }}
+                >
+                  * Kindly provide full Address
+                </p>
+              )}
             </div>
             <div className="col-lg-6">
               Total Payable:
