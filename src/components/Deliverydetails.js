@@ -43,7 +43,7 @@ export default function Deliverydetails(props) {
     }
   };
   const checkValidation = () => {
-    if (Name.length == 0) {
+    if (Name.length === 0) {
       document.getElementById("Name").style.borderColor = "red";
     } else if (Mobile.length < 10) {
       document.getElementById("Mobile").style.borderColor = "red";
